@@ -1,8 +1,21 @@
-import { Tour } from '@/types'
+'use client';
+
+import { Tour } from '../types'
 import Image from 'next/image'
-import { MapContainer, TileLayer, Polyline, Marker, Popup } from 'react-leaflet'
-import 'leaflet/dist/leaflet.css'
+import dynamic from 'next/dynamic'
 import { ShoppingCartIcon, XMarkIcon } from '@heroicons/react/24/outline'
+
+const TourMap = dynamic(
+  () => import('./TourMap'),
+  { 
+    ssr: false,
+    loading: () => (
+      <div className="h-64 bg-gray-100 flex items-center justify-center">
+        <p>Loading map...</p>
+      </div>
+    )
+  }
+)
 
 interface TourDetailProps {
   tour: Tour
@@ -65,20 +78,11 @@ export default function TourDetail({ tour, onClose, onAddToCart }: TourDetailPro
         </div>
 
         <div className="h-64 mb-6 rounded-lg overflow-hidden">
-          <MapContainer
-            center={tour.route[0]}
-            zoom={14}
-            className="h-full w-full"
-          >
-            <TileLayer
-              url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-              attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-            />
-            <Polyline positions={tour.route} color="blue" />
-            <Marker position={tour.route[0]}>
-              <Popup>Meeting Point: {tour.meetingPoint}</Popup>
-            </Marker>
-          </MapContainer>
+          <TourMap 
+            route={tour.route} 
+            meetingPoint={tour.meetingPoint} 
+            tourId={tour.id}
+          />
         </div>
 
         <div className="flex justify-between items-center">

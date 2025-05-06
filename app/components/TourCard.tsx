@@ -1,6 +1,5 @@
-import { Tour } from '@/types'
+import { Tour, Language } from '../types'
 import Image from 'next/image'
-import { useState } from 'react'
 
 interface TourCardProps {
   tour: Tour
@@ -33,7 +32,7 @@ export default function TourCard({ tour, onClick }: TourCardProps) {
         </div>
         <div className="flex justify-between items-center">
           <div className="flex space-x-2">
-            {tour.languages.map(lang => (
+            {tour.languages.map((lang: Language) => (
               <span 
                 key={lang}
                 className="px-2 py-1 bg-gray-100 rounded-full text-xs"
