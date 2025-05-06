@@ -1,4 +1,4 @@
-import { FilterState, Language, Intensity, Duration, District } from '@/types'
+import { FilterState, Language, Intensity, Duration, District } from '../types'
 
 interface FiltersProps {
   filters: FilterState;
@@ -31,7 +31,7 @@ export default function Filters({ filters, setFilters }: FiltersProps) {
               onChange={(e) => {
                 const newLanguages = e.target.checked
                   ? [...filters.languages, lang]
-                  : filters.languages.filter((l) => l !== lang);
+                  : filters.languages.filter((l: Language) => l !== lang);
                 setFilters({ ...filters, languages: newLanguages });
               }}
               className="mr-2"
@@ -104,7 +104,7 @@ export default function Filters({ filters, setFilters }: FiltersProps) {
               onChange={() => setFilters({ ...filters, minPrice: price })}
               className="mr-2"
             />
-            {`>${price}€`}
+            {`< ${price}€`}
           </label>
         ))}
       </div>

@@ -27,6 +27,7 @@ const createCustomIcon = (index: number, tourId?: string) => {
       'historic-first-district': '/markers/first-district_marker.jpg',
       'schonbrunn-gardens': '/markers/schonbrunn-marker.jpg',
       'prater-adventure': '/markers/prater_marker.jpg',
+      'murales-1070': '/markers/murales-1070_marker.jpg',
     };
 
     const iconUrl = markerImages[tourId] || '';
@@ -68,9 +69,10 @@ interface TourMapProps {
   route: [number, number][];
   meetingPoint: string;
   tourId?: string;
+  waypointNames?: Record<number, string>;
 }
 
-export default function TourMap({ route, meetingPoint, tourId }: TourMapProps) {
+export default function TourMap({ route, meetingPoint, tourId, waypointNames = {} }: TourMapProps) {
   if (!route || route.length === 0) {
     return <div className="h-64 bg-gray-100 flex items-center justify-center">
       <p>Map loading...</p>
@@ -103,7 +105,7 @@ export default function TourMap({ route, meetingPoint, tourId }: TourMapProps) {
           <Popup>
             {index === 0 
               ? `Start: ${meetingPoint}`
-              : `Waypoint ${index}`}
+              : waypointNames[index] || `Waypoint ${index}`}
           </Popup>
         </Marker>
       ))}

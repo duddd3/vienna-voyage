@@ -14,9 +14,25 @@ export const tours: Tour[] = [
     meetingPoint: 'Stephansplatz main entrance',
     route: [
       [48.208674, 16.373819], // Stephansplatz
-      [48.210033, 16.366935], // Michaelerplatz
-      [48.205334, 16.367707], // State Opera
-    ]
+      [48.2081592, 16.3739223], // point 2
+      [48.2056003, 16.3754327], // point 3
+      [48.2053488, 16.3710619], // point 4
+      [48.205746, 16.3688517], // point 5
+      [48.2083709, 16.3702474], // point 6
+      [48.209248, 16.3696414], // point 7
+      [48.2096319, 16.3718864], // point 8
+      [48.208674, 16.373819], // Stephansplatz
+    ],
+    waypointNames: {
+      1: "St. Stephen's Cathedral",
+      2: 'Graben Street',
+      3: 'Kohlmarkt',
+      4: 'Michaelerplatz',
+      5: 'Hofburg Palace',
+      6: 'Josefsplatz',
+      7: 'Albertina Museum',
+      8: 'Stephansplatz'
+    }
   },
   {
     id: 'schonbrunn-gardens',
@@ -51,5 +67,38 @@ export const tours: Tour[] = [
       [48.214654, 16.401665], // Prater Main Alley
       [48.219543, 16.400892], // Green Prater
     ]
-  }
+  },
+  {
+    id: 'murales-1070',
+    title: 'Murales 1070',
+    description: 'Explore the coolest street-art of the 7th district!',
+    imageUrl: '/images/murales-1070.jpg',
+    languages: ['german'],
+    intensity: 'relaxed',
+    duration: 1,
+    district: 7,
+    price: 8,
+    meetingPoint: 'U6 Stop Burggasse',
+    route: [
+      [48.2026925,16.3376901], // U6 Burggasse
+      [48.2028336,16.3431981], // point 2
+      [48.201835,16.3431786], // point 3
+      [48.2018226,16.345965], // point 4
+      [48.1996086,16.3468505], // point 5
+      [48.1990307,16.3432152], // point 6
+      [48.2003592,16.3408349], // point 7
+      [48.202364,16.3377717], // point 8
+    ],
+    waypointNames: {
+      1: "Murales 1",
+      2: 'Murales 2',
+      3: 'Murales 3',
+      4: 'Murales 4',
+      5: 'Murales 5',
+      6: 'Murales 6',
+      7: 'Murales 7',
+      8: 'U6 Burggasse'
+    }
+  },
+
 ];

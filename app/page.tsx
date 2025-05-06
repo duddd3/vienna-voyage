@@ -31,7 +31,7 @@ export default function Home() {
     if (filters.district && tour.district !== filters.district) {
       return false
     }
-    if (filters.minPrice && tour.price <= filters.minPrice) {
+    if (filters.minPrice && tour.price >= filters.minPrice) {
       return false
     }
     return true

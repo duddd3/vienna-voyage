@@ -15,6 +15,7 @@ export interface Tour {
   price: number;
   route: [number, number][];  // Array of [lat, lng] coordinates
   meetingPoint: string;
+  waypointNames?: Record<number, string>; // Optional mapping of waypoint indices to names
 }
 
 export interface FilterState {

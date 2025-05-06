@@ -82,6 +82,7 @@ export default function TourDetail({ tour, onClose, onAddToCart }: TourDetailPro
             route={tour.route} 
             meetingPoint={tour.meetingPoint} 
             tourId={tour.id}
+            waypointNames={tour.waypointNames}
           />
         </div>
 
