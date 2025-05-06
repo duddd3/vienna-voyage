@@ -1,5 +1,6 @@
 import { Tour } from '@/types'
 import Image from 'next/image'
+import { useState } from 'react'
 
 interface TourCardProps {
   tour: Tour
@@ -12,12 +13,16 @@ export default function TourCard({ tour, onClick }: TourCardProps) {
       className="bg-white rounded-lg shadow-md overflow-hidden cursor-pointer hover:shadow-lg transition-shadow"
       onClick={onClick}
     >
-      <div className="relative h-48">
+      <div className="relative h-48 bg-gray-200">
         <Image
           src={tour.imageUrl}
           alt={tour.title}
           fill
           className="object-cover"
+          onError={(e) => {
+            const target = e.target as HTMLImageElement;
+            target.src = 'https://placehold.co/600x400?text=Tour+Image';
+          }}
         />
       </div>
       <div className="p-4">

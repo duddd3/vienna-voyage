@@ -13,12 +13,16 @@ interface TourDetailProps {
 export default function TourDetail({ tour, onClose, onAddToCart }: TourDetailProps) {
   return (
     <div className="bg-white rounded-lg shadow-lg overflow-hidden">
-      <div className="relative h-64">
+      <div className="relative h-64 bg-gray-200">
         <Image
           src={tour.imageUrl}
           alt={tour.title}
           fill
           className="object-cover"
+          onError={(e) => {
+            const target = e.target as HTMLImageElement;
+            target.src = 'https://placehold.co/1200x800?text=Tour+Image';
+          }}
         />
         <button
           onClick={onClose}
