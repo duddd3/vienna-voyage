@@ -32,12 +32,19 @@ const createCustomIcon = (index: number, tourId?: string) => {
     const iconUrl = markerImages[tourId] || '';
     
     if (iconUrl) {
-      return L.icon({
-        iconUrl,
+      return L.divIcon({
+        className: 'custom-image-marker',
+        html: `
+          <div class="relative transition-transform duration-300 hover:scale-[5]" style="transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);">
+            <img 
+              src="${iconUrl}" 
+              class="w-10 h-10 rounded-full border-2 border-white shadow-lg"
+            />
+          </div>
+        `,
         iconSize: [40, 40],
         iconAnchor: [20, 40],
-        popupAnchor: [0, -40],
-        className: 'custom-image-marker'
+        popupAnchor: [0, -40]
       });
     }
   }
@@ -45,7 +52,12 @@ const createCustomIcon = (index: number, tourId?: string) => {
   // Default circle marker for waypoints or if no custom image found
   return L.divIcon({
     className: 'custom-marker',
-    html: `<div style="background-color: ${index === 0 ? '#3b82f6' : '#10b981'}; width: 24px; height: 24px; border-radius: 50%; border: 2px solid white; box-shadow: 0 0 10px rgba(0,0,0,0.3);"></div>`,
+    html: `
+      <div 
+        class="rounded-full border-2 border-white shadow-lg transition-transform duration-300 hover:scale-[5]"
+        style="background-color: ${index === 0 ? '#3b82f6' : '#10b981'}; width: 24px; height: 24px; transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);"
+      ></div>
+    `,
     iconSize: [24, 24],
     iconAnchor: [12, 12],
     popupAnchor: [0, -12]
