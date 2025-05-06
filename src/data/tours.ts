@@ -1,4 +1,4 @@
-import { Tour } from '../types';
+import { Tour } from '../../app/types';
 
 export const tours: Tour[] = [
   {
