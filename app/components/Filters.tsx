@@ -17,7 +17,7 @@ export default function Filters({ filters, setFilters }: FiltersProps) {
   };
 
   return (
-    <div className="w-64 bg-white p-4 rounded-lg shadow-md">
+    <div className="w-64">
       <h2 className="text-xl font-semibold mb-4">Filters</h2>
       
       {/* Language Filter */}

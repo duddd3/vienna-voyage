@@ -1,0 +1,15 @@
+{
+  "site.title": "Vienna Tours",
+  "filters.title": "Filters",
+  "filters.language": "Language",
+  "filters.intensity": "Intensity",
+  "filters.duration": "Duration",
+  "filters.district": "District",
+  "filters.minPrice": "Min Price",
+  "filters.reset": "Reset Filters",
+  "tour.addToCart": "Add to Cart",
+  "tour.details": "Tour Details",
+  "cart.title": "Shopping Cart",
+  "cart.empty": "Your cart is empty.",
+  "cart.checkout": "Checkout"
+}

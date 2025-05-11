@@ -1,0 +1,15 @@
+{
+  "site.title": "Wien Touren",
+  "filters.title": "Filter",
+  "filters.language": "Sprache",
+  "filters.intensity": "Intensität",
+  "filters.duration": "Dauer",
+  "filters.district": "Bezirk",
+  "filters.minPrice": "Mindestpreis",
+  "filters.reset": "Filter zurücksetzen",
+  "tour.addToCart": "In den Warenkorb",
+  "tour.details": "Tour-Details",
+  "cart.title": "Warenkorb",
+  "cart.empty": "Ihr Warenkorb ist leer.",
+  "cart.checkout": "Zur Kasse"
+}
