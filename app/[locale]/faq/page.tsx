@@ -2,6 +2,7 @@
 
 import { ChevronDownIcon, ChevronUpIcon } from '@heroicons/react/24/outline';
 import { useState } from 'react';
+import Link from 'next/link';
 
 const faqItems = [
   {
@@ -79,14 +80,14 @@ export default function FAQPage() {
 
       <div className="mt-12 text-center">
         <p className="text-gray-600 mb-4">
-          Can't find the answer you're looking for?
+          Can&apos;t find the answer you&apos;re looking for?
         </p>
-        <a
+        <Link
           href="/contact"
           className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700"
         >
           Contact Us
-        </a>
+        </Link>
       </div>
     </div>
   );

@@ -9,7 +9,7 @@ import TourDetail from '../components/TourDetail';
 import { tours } from '../data/tours';
 import type { FilterState, Tour, Language } from '../types';
 import Link from 'next/link';
-import { usePathname, useSearchParams, useRouter } from 'next/navigation';
+import { useSearchParams, useRouter } from 'next/navigation';
 
 export default function Home() {
   const searchParams = useSearchParams();

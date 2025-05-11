@@ -7,7 +7,7 @@ export default function ContactPage() {
       <div className="text-center mb-12">
         <h1 className="text-4xl font-bold text-gray-900 mb-6">Contact Us</h1>
         <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-          Have questions or want to book a tour? We'd love to hear from you!
+          Have questions or want to book a tour? We&apos;d love to hear from you!
         </p>
       </div>
 
